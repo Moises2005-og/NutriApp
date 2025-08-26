@@ -1,14 +1,16 @@
+import Checkbox from 'expo-checkbox';
 import { useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
 export default function Login() {
 
     const [passwordActive, setPasswordActive] = useState(true)
+    const [check, setCheck] = useState<boolean>(false)
 
     return(
         <>
             <View style={{backgroundColor: "#D8EED2", height: "100%"}}>
-                    <View style={{width: "100%", paddingHorizontal: 20, paddingVertical: 50, justifyContent: "center"}}>
+                    <View style={{width: "100%", paddingHorizontal: 20, paddingVertical: 45, justifyContent: "center"}}>
                         <View style={{justifyContent: "center"}}>  
                             <View style={{flexDirection: "row", alignItems: "center", gap: 10, justifyContent: "center"}}>
                                 <Image source={require("../assets/images/nutriLogo.png")} style={{width: 40, height: 40, objectFit: "contain"}}/>
@@ -37,13 +39,21 @@ export default function Login() {
                                     </TouchableOpacity>
                                 </View>
                             </View>
+                            <View style={{flexDirection: "row", alignItems: "center", gap: 8}}>
+                                <Checkbox style={{marginTop: 32, marginBottom: 20, borderRadius: 4}} color={check ? "#3BAB1E":""} value={check} onValueChange={setCheck} />
+                                <Text style={{fontSize: 14, paddingTop: 10}}>Continuar Conectado</Text>
+                            </View>
+
+                            <TouchableOpacity style={{backgroundColor: "#3BAB1E", borderRadius: 10, width: 179, height: 49}}>
+                                <Text style={{textAlign: "center", color: "#FDFDFD", fontSize: 16, margin: "auto"}}>Acessar</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
             </View>
         </>
     )
 }
-
+4
 const styles = StyleSheet.create({
     input: {
         borderColor: "#E5E7EB",
