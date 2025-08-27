@@ -1,3 +1,4 @@
+import { useAuth } from '@/hooks/useAuth';
 import Checkbox from 'expo-checkbox';
 import { useState } from "react";
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
@@ -6,6 +7,7 @@ export default function Login() {
 
     const [passwordActive, setPasswordActive] = useState(true)
     const [check, setCheck] = useState<boolean>(false)
+    const {handleChange, login, data} = useAuth()
 
     return(
         <>
@@ -26,15 +28,15 @@ export default function Login() {
                         <View>
                             <View style={{flexDirection: "column", gap: 8, marginBottom: 16}}>
                                 <Text>E-mail</Text>
-                                <TextInput placeholder="Seu@mail.com" style={styles.input}/>
+                                <TextInput placeholder="Seu@mail.com" onChangeText={(value) => handleChange(value, "email") } value={data.email} style={styles.input}/>
                             </View>
                             <View style={{flexDirection: "column", gap: 8}}>
                                 <Text>Senha</Text>
                                 <View style={styles.input2}>
-                                    <TextInput placeholder="Sua senha de acesso" secureTextEntry={passwordActive}/>
-                                    <TouchableOpacity onPress={() => setPasswordActive(passwordActive)}>
+                                    <TextInput placeholder="Sua senha de acesso" value={data.password} onChangeText={(value) => handleChange(value, "password")} secureTextEntry={passwordActive}/>
+                                    <TouchableOpacity onPress={() => setPasswordActive(!passwordActive)}>
                                         {
-                                            passwordActive ? <Image source={require("../assets/images/eye.png")} />:<Image source={require("../assets/images/eye-closed.png")} />
+                                            !passwordActive ? <Image source={require("../assets/images/eye.png")} />:<Image source={require("../assets/images/eye-closed.png")} />
                                         }
                                     </TouchableOpacity>
                                 </View>
@@ -44,7 +46,7 @@ export default function Login() {
                                 <Text style={{fontSize: 14, paddingTop: 10}}>Continuar Conectado</Text>
                             </View>
 
-                            <TouchableOpacity style={{backgroundColor: "#3BAB1E", borderRadius: 10, width: 179, height: 49}}>
+                            <TouchableOpacity style={{backgroundColor: "#3BAB1E", borderRadius: 10, width: 179, height: 49}} onPress={login}>
                                 <Text style={{textAlign: "center", color: "#FDFDFD", fontSize: 16, margin: "auto"}}>Acessar</Text>
                             </TouchableOpacity>
                         </View>
