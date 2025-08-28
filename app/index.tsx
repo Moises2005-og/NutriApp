@@ -12,7 +12,7 @@ export default function Login() {
     return(
         <>
             <View style={{backgroundColor: "#D8EED2", height: "100%"}}>
-                    <View style={{width: "100%", paddingHorizontal: 20, paddingVertical: 45, justifyContent: "center"}}>
+                    <View style={{width: "100%", paddingHorizontal: 20, paddingVertical: 55, justifyContent: "center"}}>
                         <View style={{justifyContent: "center"}}>  
                             <View style={{flexDirection: "row", alignItems: "center", gap: 10, justifyContent: "center"}}>
                                 <Image source={require("../assets/images/nutriLogo.png")} style={{width: 40, height: 40, objectFit: "contain"}}/>

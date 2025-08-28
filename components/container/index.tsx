@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Header } from "../header";
 
 type ContainerProps = {
@@ -8,13 +9,13 @@ type ContainerProps = {
 
 export function Container({children}: ContainerProps) {
     return(
-        <View style={{paddingTop: 40, padding: 30, justifyContent: "center", flexDirection: "column"}}>
+        <SafeAreaView style={{paddingTop: 10, padding: 30, justifyContent: "center", flexDirection: "column"}}>
             {
                 <View>
                     <Header/>
                     {children}
                 </View>
             }
-        </View>
+        </SafeAreaView>
     )
 }
