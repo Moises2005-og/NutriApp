@@ -66,7 +66,7 @@ export const foods: any = [
     title: "Salada Variada",
     protein: 15.13,
     grams: 18.40,
-    image: "1"
+    image: "1",
   },
   {
     title: "Frango Grelhado",
