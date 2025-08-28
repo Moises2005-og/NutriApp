@@ -35,7 +35,7 @@ export function useAuth() {
         setPayload(dadosConvert);
     }
 
-    navigation.navigate("home");
+    navigation.navigate("Home");
     } catch (err) {
     console.log("Erro AsyncStorage:", err);
     }
@@ -49,5 +49,10 @@ export function useAuth() {
     }));
   };
 
-  return { handleChange, login, data, payload };
+  const logout = async () => {
+    await AsyncStorage.removeItem("user")
+    navigation.navigate("Login")
+  }
+
+  return { handleChange, login, data, payload, logout };
 }

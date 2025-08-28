@@ -16,7 +16,7 @@ export default function Login() {
                         <View style={{justifyContent: "center"}}>  
                             <View style={{flexDirection: "row", alignItems: "center", gap: 10, justifyContent: "center"}}>
                                 <Image source={require("../assets/images/nutriLogo.png")} style={{width: 40, height: 40, objectFit: "contain"}}/>
-                                <Text style={{color: "#3BAB1E", fontSize: 24, fontWeight: "bold"}}>NutriChef</Text>
+                                <Text style={{color: "#3BAB1E", fontSize: 24, fontWeight: "bold", fontFamily: "Poppins"}}>NutriChef</Text>
                             </View>
                         </View>
                     </View>

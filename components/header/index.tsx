@@ -1,3 +1,4 @@
+import { useAuth } from '@/hooks/useAuth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
@@ -6,6 +7,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 
 export function Header() {
     const [info, setInfo] = useState<any>({})
+    const {logout} = useAuth()
 
     useEffect(() => {
         async function checkData() {
@@ -34,7 +36,7 @@ export function Header() {
                     <TouchableOpacity>
                         <Image source={require("../../assets/images/search.png")} />
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={logout}>
                         <Image source={require("../../assets/images/sign-out.png")} />
                     </TouchableOpacity>
                 </View>

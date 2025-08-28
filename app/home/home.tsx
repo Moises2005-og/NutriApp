@@ -80,6 +80,7 @@ export default function Home() {
               protein={item.protein}
               grams={item.grams}
               image={foodImages[item.image]}
+              data={item}
             />
           ))}
         </ScrollView>
