@@ -7,6 +7,7 @@ export default function Login() {
 
     const [passwordActive, setPasswordActive] = useState(true)
     const [check, setCheck] = useState<boolean>(false)
+    const [modal, setModal] = useState(false)
     const {handleChange, login, data} = useAuth()
 
     return(

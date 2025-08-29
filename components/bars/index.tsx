@@ -6,19 +6,21 @@ type BarsProps = {
     qtd: boolean[]
 }
 
-export function Bars({title, protein, qtd}: any) {
+export function Bars({title, protein, qtd}: BarsProps) {
     return(
         <>
             <View>
-                <View>
+                <View style={{flexDirection: "row", justifyContent: "space-between", marginBottom: 15}}>
                     <Text>{title}</Text>
                     <Text>{protein}</Text>
                 </View>
-                {
-                    qtd.map((item: any) => (
-                        <View style={styles.activeBar}></View>
-                    ))
-                }
+                <View style={{flexDirection: "row", gap: "2%", width: "100%"}}>
+                    {
+                        qtd.map((item: any) => (
+                            <View style={item ? styles.activeBar:styles.Bar}></View>
+                        ))
+                    }
+                </View>
             </View>
         </>
     )
@@ -31,12 +33,14 @@ const styles = StyleSheet.create({
     },
     activeBar: {
         backgroundColor: "#3BAB1E",
-        width: 42,
-        height: 8
+        width: 55,
+        height: 10,
+        borderRadius: 10
     },
     Bar: {
         backgroundColor: "#B1DDA5",
-        width: 42,
-        height: 8
+        width: 55,
+        height: 10,
+        borderRadius: 10
     }
 })

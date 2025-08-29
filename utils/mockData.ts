@@ -67,23 +67,31 @@ export const foods: any = [
     protein: 15.13,
     grams: 18.40,
     image: "1",
+    qtd: [true, true, true, false, false, false],
+    energy: 221,
   },
   {
     title: "Frango Grelhado",
     protein: 30.25,
     grams: 22.80,
-    image: "2"
+    image: "2",
+    qtd: [true, true, true, false, false, false],
+    energy: 221,
   },
   {
     title: "Omelete de queijo e espinafre",
     protein: 20.50,
     grams: 10.30,
     image: "3",
+    qtd: [true, true, true, false, false, false],
+    energy: 221
   },
   {
     title: "Panqueca de aveia e banana",
     protein: 8.75,
     grams: 40.20,
-    image: "4"
+    image: "4",
+    qtd: [true, true, true, false, false, false],
+    energy: 221
   },
 ]
