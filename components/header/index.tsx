@@ -1,5 +1,6 @@
 import { useAuth } from '@/hooks/useAuth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
@@ -8,6 +9,7 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 export function Header() {
     const [info, setInfo] = useState<any>({})
     const {logout} = useAuth()
+    const navigation = useNavigation<any>()
 
     useEffect(() => {
         async function checkData() {
@@ -33,7 +35,7 @@ export function Header() {
                     </View>
                 </View>
                 <View style={{flexDirection: "row", alignItems: "center", gap: 5}}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate("Search-Page")}>
                         <Image source={require("../../assets/images/search.png")} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={logout}>

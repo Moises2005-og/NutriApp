@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import FoodDetails from "./food-details/food-details";
 import Home from "./home/home";
 import Login from "./index";
+import SearchPage from "./search-page/search-page";
 
 
 export default function Navigation() {
@@ -41,7 +42,8 @@ export default function Navigation() {
 >
   <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
   <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-    <Stack.Screen name="Food-Details" component={FoodDetails} options={{ headerShown: false }} />
+  <Stack.Screen name="Food-Details" component={FoodDetails} options={{ headerShown: false }} />
+  <Stack.Screen name="Search-Page" component={SearchPage} options={{ headerShown: false }} />
 </Stack.Navigator>
 
   );
